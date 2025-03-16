@@ -1,11 +1,27 @@
 # TopicGPT
-This repository contains scripts and prompts for our paper ["TopicGPT: Topic Modeling by Prompting Large Language Models"](https://arxiv.org/abs/2311.01449). 
+This repository contains the code for our project for the course CS685-NeuralNetworks. The code has reused the implementation from paper: ["TopicGPT: Topic Modeling by Prompting Large Language Models"](https://arxiv.org/abs/2311.01449). 
 
 ![TopicGPT Pipeline Overview](pipeline.png)
 
+
+
 ## Updates
-- [11/18/23] Second-level topic generation code and refinement code are uploaded.
-- [11/11/23] Basic pipeline is uploaded. Refinement and second-level topic generation code are coming soon.
+We have modified pipelines for our project detailed below:
+
+### Background
+The USPTO patent classification system assigns patents to one or multiple categories. This classification is typically done by humans before a patent is approved. Over time, the classification hierarchy (CPC) has evolved to accommodate new technologies and applications. For example, with the increasing interest in climate change-related technology, the category "Y02", which relates to patents focusing on "technologies for mitigating climate change" is a new addition.
+
+### Problem Statement
+In this project, we leverage Y02 patent data to align TopicGPT for the creation of topic hierarchies. This system serves two key purposes: (1) assisting patent officials in streamlining the labor-intensive process of manually annotating patents, and (2) empowering innovators and industry professionals to uncharted patents accessible from different points of view.
+
+### Contributions
+- Collected and compiled a new dataset by scraping recent data from USPTO's website. Our dataset was published on [Kaggle](https://www.kaggle.com/datasets/mattisbodynek/uspto-climate-positive-patent-abstracts-cpc-y02)
+
+- Applied prompt engineering and few-shot learning to align TopicGPT with our generation objectives. 
+
+- Developed a robust evaluation technique utilizing inter-annotator agreement with LLMs like Mistral, Llama 3, Qwen, and DBRX
+
+- Demonstrated superior interpretability and flexibility to user-defined goals compared to BERTTopic
 
 ## Setup
 - Install the requirements: `pip install -r requirements.txt`
